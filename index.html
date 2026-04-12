@@ -79,9 +79,9 @@
 
           <a
             href="#"
-            class="store-badge store-badge--google"
-            id="store-badge-header"
-            aria-label="Get it on Google Play"
+            class="store-badge store-badge--google js-android-download-modal"
+            id="store-badge-google-hero"
+            aria-label="Get it on Google Play — Android download info"
           >
             <span class="store-badge__icon" aria-hidden="true">
               <svg
@@ -121,8 +121,13 @@
         <div class="hero">
           <div class="hero-text-box">
             <h1 class="heading-primary">
-              Bring the
-              <span class="hero-accent">Store</span>
+              <span
+                class="hero-heading-line hero-heading-line--highlight"
+                id="background-span"
+              >
+                Bring the
+                <span class="hero-accent">Store</span>
+              </span>
               <br />
               to your
               <span class="hero-accent">Door</span>
@@ -166,7 +171,7 @@
           <div class="hero-img-box">
             <div class="hero-image-wrap">
               <img
-                src="img/hero3.png"
+                src="img/koliago3.png"
                 class="hero-img"
                 alt="Groceries delivery hero image"
               />
@@ -198,8 +203,9 @@
 
                 <a
                   href="#"
-                  class="store-badge store-badge--google"
-                  aria-label="Get it on Google Play"
+                  class="store-badge store-badge--google js-android-download-modal"
+                  id="store-badge-google-strip"
+                  aria-label="Get it on Google Play — Android download info"
                 >
                   <span class="store-badge__icon" aria-hidden="true">
                     <svg
@@ -256,7 +262,8 @@
           </div>
         </div>
       </section>
-      <section class="section-featured">
+
+      <!-- <section class="section-featured">
         <div class="container">
           <h2 class="heading-featured-in">Trusted by modern food brands</h2>
           <div class="logos">
@@ -266,80 +273,109 @@
             <img src="img/logos/forbes.png" alt="forbes" />
             <img src="img/logos/usa-today.png" alt="usa-today" />
           </div>
-        </div>
+        </div> -->
       </section>
       <section class="section-how" id="how">
         <div class="container">
-          <span class="subheading">How it works</span>
-          <h2 class="heading-secondary">
-            Get your groceries in 3 simple steps
-          </h2>
-        </div>
-        <div class="container grid grid--2-cols grid--center-v">
-          <!--  step 01 -->
-          <div class="step-text-box">
-            <p class="step-number">01</p>
-            <h3 class="heading-tertiary">Choose your grocery preferences</h3>
-            <p class="step-description">
-              Browse fresh produce, pantry essentials, and daily offers. Save
-              your favorites and build your basket in seconds.
+          <div class="how-intro">
+            <span class="subheading">How it works</span>
+            <h2 class="heading-secondary">How does ordering work?</h2>
+            <p class="how-intro__lead">
+              From picking products to doorstep delivery, Koliago keeps every
+              step clear and quick — so you spend less time shopping and more
+              time enjoying fresh food.
             </p>
-          </div>
-          <div class="step-img-box">
-            <img
-              src="img/app/app-screen-14.png"
-              class="step-img"
-              alt="iphone app preferences section screen"
-            />
-          </div>
-          <!--  step 02 -->
-          <div class="step-img-box">
-            <img
-              src="img/app/app-screen-15.png"
-              class="step-img"
-              alt="iphone app preferences section screen"
-            />
+            <a href="#meals" class="how-intro__cta">Browse categories</a>
           </div>
 
-          <div class="step-text-box">
-            <p class="step-number">02</p>
-            <h3 class="heading-tertiary">Confirm your cart and address</h3>
-            <p class="step-description">
-              Choose your preferred delivery slot, payment method, and notes.
-              Koliago instantly confirms your order.
-            </p>
-          </div>
-          <!--  step 03 -->
-          <div class="step-text-box">
-            <p class="step-number">03</p>
-            <h3 class="heading-tertiary">Receive your order at your door</h3>
-            <p class="step-description">
-              Track your rider in real time and get your groceries fast, fresh,
-              and safely packed whenever you need.
-            </p>
-          </div>
-          <div class="step-img-box">
-            <img
-              src="img/app/app-screen-16.png"
-              class="step-img"
-              alt="iphone app preferences section screen"
-            />
-          </div>
+          <div class="how-steps">
+            <article class="how-step-card how-step-card--a">
+              <div class="how-step-card__body">
+                <span class="how-step-card__badge">01</span>
+                <h3 class="how-step-card__title">
+                  Choose your grocery preferences
+                </h3>
+                <p class="how-step-card__text">
+                  Browse fresh produce, pantry essentials, and daily offers. Save
+                  your favorites and build your basket in seconds.
+                </p>
+              </div>
+              <div class="how-step-card__visual">
+                <div class="how-step-card__frame">
+                  <img
+                    src="img/app/app-screen-14.png"
+                    class="step-img"
+                    alt="Koliago app — browse and preferences"
+                  />
+                </div>
+              </div>
+            </article>
 
-          <div class="step-img-box">
-            <img
-              src="img/app/app-screen-18.png"
-              class="step-img"
-              alt="iphone app preferences section screen"
-            />
-          </div>
-          <div class="step-text-box">
-            <p class="step-number">04</p>
-            <h3 class="heading-tertiary">Confirm your order for delivery</h3>
-            <p class="step-description">
-              Choose your preferred delivery slot, payment method, and notes.
-              Koliago instantly confirms your order.
-            </p>
+            <article class="how-step-card how-step-card--b">
+              <div class="how-step-card__body">
+                <span class="how-step-card__badge">02</span>
+                <h3 class="how-step-card__title">
+                  Confirm your cart and address
+                </h3>
+                <p class="how-step-card__text">
+                  Choose your delivery slot, payment method, and any notes.
+                  Koliago confirms your order right away.
+                </p>
+              </div>
+              <div class="how-step-card__visual">
+                <div class="how-step-card__frame">
+                  <img
+                    src="img/app/app-screen-15.png"
+                    class="step-img"
+                    alt="Koliago app — cart and checkout"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <article class="how-step-card how-step-card--c">
+              <div class="how-step-card__body">
+                <span class="how-step-card__badge">03</span>
+                <h3 class="how-step-card__title">
+                  Receive your order at your door
+                </h3>
+                <p class="how-step-card__text">
+                  Track your rider in real time and get groceries fast, fresh,
+                  and safely packed whenever you need them.
+                </p>
+              </div>
+              <div class="how-step-card__visual">
+                <div class="how-step-card__frame">
+                  <img
+                    src="img/app/app-screen-16.png"
+                    class="step-img"
+                    alt="Koliago app — delivery tracking"
+                  />
+                </div>
+              </div>
+            </article>
+
+            <article class="how-step-card how-step-card--d">
+              <div class="how-step-card__body">
+                <span class="how-step-card__badge">04</span>
+                <h3 class="how-step-card__title">
+                  Finalize delivery details
+                </h3>
+                <p class="how-step-card__text">
+                  Double-check your slot and address, add delivery instructions,
+                  and you are set — we will handle the rest.
+                </p>
+              </div>
+              <div class="how-step-card__visual">
+                <div class="how-step-card__frame">
+                  <img
+                    src="img/app/app-screen-18.png"
+                    class="step-img"
+                    alt="Koliago app — order confirmation"
+                  />
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
@@ -663,65 +699,229 @@
       </div>
     </section>
     <footer class="footer">
-      <div class="container footer-clean">
-        <div class="footer-brand-col">
-          <a href="#" class="footer-logo">
-            <img src="img/koliago2.png" class="logo" alt="koliago logo" />
+      <div class="container footer-inner">
+        <div class="footer-stores" role="navigation" aria-label="Download the app">
+          <a
+            href="https://apps.apple.com/us/app/koliago/id6760557417"
+            class="store-badge store-badge--apple store-badge--footer"
+            id="store-badge-footer-apple"
+            aria-label="Download on the App Store"
+          >
+            <span class="store-badge__icon" aria-hidden="true">
+              <ion-icon name="logo-apple"></ion-icon>
+            </span>
+            <span class="store-badge__text">
+              <span class="store-badge__kicker">Download on the</span>
+              <span class="store-badge__store">App Store</span>
+            </span>
           </a>
-          <p class="footer-brand-copy">
-            Best groceries app ever. Pick your desired groceries from the menu.
-          </p>
-          <ul class="social-link">
-            <li>
-              <a class="footer-link" href="#">
-                <ion-icon class="social-icon" name="logo-linkedin"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a class="footer-link" href="#">
-                <ion-icon class="social-icon" name="logo-instagram"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a class="footer-link" href="#">
-                <ion-icon class="social-icon" name="logo-twitter"></ion-icon>
-              </a>
-            </li>
-            <li>
-              <a class="footer-link" href="#">
-                <ion-icon class="social-icon" name="logo-facebook"></ion-icon>
-              </a>
-            </li>
-          </ul>
+          <a
+            href="#"
+            class="store-badge store-badge--google store-badge--footer js-android-download-modal"
+            id="store-badge-footer-google"
+            aria-label="Get it on Google Play — Android download info"
+          >
+            <span class="store-badge__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 512 512"
+                width="26"
+                height="26"
+                role="presentation"
+                aria-hidden="true"
+              >
+                <path
+                  fill="#00A0FF"
+                  d="M71.8 39.4c-7.6 7.7-12 20-12 36.8v359.6c0 16.8 4.4 29.1 12 36.8l1.9 1.8 203.7-203.7v-10.6L73.7 37.6l-1.9 1.8z"
+                />
+                <path
+                  fill="#00D18A"
+                  d="M314.8 256 95.7 36.9c5.2-.3 11.1 1 17.7 4.7l262.6 150.8c13.2 7.6 21 17.6 21 28.6s-7.8 21-21 28.6L113.4 470.4c-6.6 3.8-12.5 5.1-17.7 4.7L314.8 256z"
+                  opacity=".98"
+                />
+                <path
+                  fill="#FFD54A"
+                  d="M376 249.6 314.8 256l61.2 6.4 72.2-41.4c13.2-7.6 21-17.6 21-28.6 0 11-7.8 21-21 28.6L376 249.6z"
+                />
+                <path
+                  fill="#FF3B30"
+                  d="M95.7 475.1 314.8 256l61.2 6.4L113.4 470.4c-6.6 3.8-12.5 5.1-17.7 4.7z"
+                  opacity=".85"
+                />
+              </svg>
+            </span>
+            <span class="store-badge__text">
+              <span class="store-badge__kicker">GET IT ON</span>
+              <span class="store-badge__store">Google Play</span>
+            </span>
+          </a>
         </div>
-        <nav class="footer-col">
-          <p class="footer-heading">Support</p>
-          <ul class="footer-nav">
-            <li><a href="#" class="footer-link">Account</a></li>
-            <li><a href="#" class="footer-link">Support Center</a></li>
-            <li><a href="#" class="footer-link">Feedback</a></li>
-            <li><a href="#" class="footer-link">Accessibility</a></li>
-          </ul>
+
+        <ul class="footer-social" aria-label="Social media">
+          <li>
+            <a
+              href="#"
+              class="footer-social-btn"
+              aria-label="Koliago on LinkedIn"
+            >
+              <ion-icon name="logo-linkedin" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="footer-social-btn"
+              aria-label="Koliago on Instagram"
+            >
+              <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="footer-social-btn"
+              aria-label="Koliago on X (Twitter)"
+            >
+              <ion-icon name="logo-twitter" aria-hidden="true"></ion-icon>
+            </a>
+          </li>
+        </ul>
+
+        <nav class="footer-links" aria-label="Site links">
+          <div class="footer-links-grid">
+            <ul class="footer-links-col">
+              <li>
+                <a href="#cta" class="footer-plain-link">Contact</a>
+              </li>
+              <li>
+                <a href="#" class="footer-plain-link">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" class="footer-plain-link">Terms of Service</a>
+              </li>
+              <li>
+                <a href="#" class="footer-plain-link">Support Center</a>
+              </li>
+            </ul>
+            <ul class="footer-links-col">
+              <li>
+                <a href="#how" class="footer-plain-link">How it works</a>
+              </li>
+              <li>
+                <a href="#meals" class="footer-plain-link">Categories</a>
+              </li>
+              <li>
+                <a href="#price" class="footer-plain-link">Pricing</a>
+              </li>
+              <li>
+                <a href="#" class="footer-plain-link">About Koliago</a>
+              </li>
+            </ul>
+            <ul class="footer-links-col">
+              <li>
+                <a
+                  href="https://apps.apple.com/us/app/koliago/id6760557417"
+                  class="footer-plain-link"
+                  >App Store</a
+                >
+              </li>
+              <li>
+                <a href="#" class="footer-plain-link js-android-download-modal"
+                  >Google Play</a
+                >
+              </li>
+              <li>
+                <a href="#meals" class="footer-plain-link">Fresh deals</a>
+              </li>
+              <li>
+                <a href="#" class="footer-plain-link">Accessibility</a>
+              </li>
+            </ul>
+          </div>
         </nav>
-        <nav class="footer-col">
-          <p class="footer-heading">Useful Links</p>
-          <ul class="footer-nav">
-            <li><a href="#" class="footer-link">Payment & Tax</a></li>
-            <li><a href="#" class="footer-link">Terms of Service</a></li>
-            <li><a href="#" class="footer-link">Privacy Policy</a></li>
-            <li><a href="#" class="footer-link">About Us</a></li>
-          </ul>
-        </nav>
-        <nav class="footer-col">
-          <p class="footer-heading">Our Menu</p>
-          <ul class="footer-nav">
-            <li><a href="#" class="footer-link">Top Selling</a></li>
-            <li><a href="#" class="footer-link">Categories</a></li>
-            <li><a href="#" class="footer-link">Fresh Deals</a></li>
-          </ul>
-        </nav>
+
+        <p class="footer-attribution">
+          Made with
+          <span class="footer-attribution__heart" aria-label="love">&#9829;</span>
+          by <span class="footer-attribution__brand">Codigo</span>
+          &copy; 2026
+        </p>
       </div>
     </footer>
+
+    <div
+      class="android-modal"
+      id="android-download-modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="android-modal-title"
+      aria-modal="true"
+    >
+      <div
+        class="android-modal__backdrop js-android-modal-close"
+        tabindex="-1"
+      ></div>
+      <div class="android-modal__panel">
+        <button
+          type="button"
+          class="android-modal__close js-android-modal-close"
+          aria-label="Close dialog"
+        >
+          &times;
+        </button>
+        <h2 class="android-modal__title" id="android-modal-title">
+          Download Koliago for Android
+        </h2>
+        <!-- <p class="android-modal__lead">
+          Google Play is not available yet. You can install the app using the
+          APK package inside the zip file below.
+        </p> -->
+        <p class="android-modal__apology">
+          We are still working on publishing Koliago on the Google Play Store.
+          Sorry for the extra steps, Android users — and thank you for your
+          patience while we finish the rollout.
+        </p>
+        <p class="android-modal__steps-title">After you download</p>
+        <ol class="android-modal__steps">
+          <li>
+            Tap
+            <strong>Download koliaGo.zip</strong>
+            and wait until the file finishes.
+          </li>
+          <li>
+            Open your
+            <strong>Files</strong>
+            app (or your browser’s downloads folder) and find
+            <strong>koliaGo.zip</strong>
+            .
+          </li>
+          <li>
+            <strong>Unzip</strong>
+            the archive (tap the file and choose
+            <em>Extract</em>
+            /
+            <em>Unzip</em>
+            , or use a zip app).
+          </li>
+          <li>
+            Open the extracted folder and tap the
+            <strong>.apk</strong>
+            file, then allow installs from this source if Android asks.
+          </li>
+          <li>
+            Follow the prompts to
+            <strong>Install</strong>
+            and open Koliago.
+          </li>
+        </ol>
+        <a
+          href="downloads/koliaGo.zip"
+          download="koliaGo.zip"
+          class="android-modal__download js-android-download-zip"
+        >
+          Download koliaGo.zip
+        </a>
+      </div>
+    </div>
 
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
   </body>

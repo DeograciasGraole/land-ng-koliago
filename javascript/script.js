@@ -9,56 +9,104 @@
 // h1.style.padding= "5rem";
 
 
-// Make year updating each year
-const yearEL=document.querySelector(".year");
-const currentYear= new Date().getFullYear();
-yearEL.textContent=currentYear;
+// Make year updating each year (footer may omit .year)
+const yearEL = document.querySelector(".year");
+if (yearEL) {
+  yearEL.textContent = new Date().getFullYear();
+}
 
 // Make mobile navigation work
-const btnNav=document.querySelector(".btn-mobile-nav");
-const headerEL=document.querySelector(".header");
-btnNav.addEventListener('click',function(){
-  headerEL.classList.toggle('nav-open');
-})
+const btnNav = document.querySelector(".btn-mobile-nav");
+const headerEL = document.querySelector(".header");
+if (btnNav && headerEL) {
+  btnNav.addEventListener("click", function () {
+    headerEL.classList.toggle("nav-open");
+  });
+}
+// Android APK download modal (Google Play badges)
+const androidModal = document.querySelector(".android-modal");
+
+function openAndroidModal() {
+  if (!androidModal) return;
+  androidModal.classList.add("android-modal--open");
+  androidModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function closeAndroidModal() {
+  if (!androidModal) return;
+  androidModal.classList.remove("android-modal--open");
+  androidModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+document.querySelectorAll(".js-android-modal-close").forEach(function (el) {
+  el.addEventListener("click", function () {
+    closeAndroidModal();
+  });
+});
+
+document.addEventListener("keydown", function (e) {
+  if (
+    e.key === "Escape" &&
+    androidModal &&
+    androidModal.classList.contains("android-modal--open")
+  ) {
+    closeAndroidModal();
+  }
+});
+
 // smooth scrolling animation
-const allLinks=document.querySelectorAll('a:link');
-allLinks.forEach(function(link){
-  link.addEventListener('click',function(e){
+const allLinks = document.querySelectorAll("a:link");
+allLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    const href = link.getAttribute("href");
+    if (href && (href.startsWith("http://") || href.startsWith("https://"))) {
+      return;
+    }
+    if (link.classList.contains("js-android-download-zip")) {
+      return;
+    }
+    if (link.classList.contains("js-android-download-modal")) {
+      e.preventDefault();
+      openAndroidModal();
+      if (headerEL) headerEL.classList.remove("nav-open");
+      return;
+    }
     e.preventDefault();
-    const href=link.getAttribute("href");
     // scroll back to top
-    if(href==="#") 
-    window.scrollTo({
-      top:0,
-      behavior:"smooth",
-    });
+    if (href === "#")
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
     // scroll to others link
-    if(href!="#" && href.startsWith("#")){
-     const sectionEl= document.querySelector(href);
-    sectionEl.scrollIntoView({behavior:"smooth"});
+    if (href && href !== "#" && href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      if (sectionEl) sectionEl.scrollIntoView({ behavior: "smooth" });
     }
     //close mobile naviigation
-    if(link.classList.contains("main-nav-link"))
-    headerEL.classList.toggle('nav-open');
+    if (link.classList.contains("main-nav-link"))
+      headerEL.classList.toggle("nav-open");
   });
 });
 // sticky navigation
-const setctionHeroEL=document.querySelector(".section-hero");
-const obs=new IntersectionObserver(function(entries){
-  const ent=entries[0];
-  console.log(ent);
-  if(ent.isIntersecting===false)
-   document.body.classList.add('sticky');
-   if(ent.isIntersecting===true)
-   document.body.classList.remove('sticky');
-},
-{
-  //in the viewport
-  root:null,
-  threshold:0,
-  rootMargin:"-80px",
-})
-obs.observe(setctionHeroEL);
+const setctionHeroEL = document.querySelector(".section-hero");
+if (setctionHeroEL) {
+  const obs = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+      if (ent.isIntersecting === false) document.body.classList.add("sticky");
+      if (ent.isIntersecting === true) document.body.classList.remove("sticky");
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-80px",
+    }
+  );
+  obs.observe(setctionHeroEL);
+}
 
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
