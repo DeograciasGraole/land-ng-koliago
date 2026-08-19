@@ -1,6 +1,7 @@
 import GooglePlayIcon from './GooglePlayIcon.jsx'
 
 const APP_STORE = 'https://apps.apple.com/us/app/koliago/id6760557417'
+const GOOGLE_PLAY="https://play.google.com/store/apps/details?id=com.samuel.vlog&hl=en";
 const year = new Date().getFullYear()
 
 export default function Footer() {
@@ -23,7 +24,7 @@ export default function Footer() {
             </span>
           </a>
           <a
-            href="#"
+            href={GOOGLE_PLAY}
             className="store-badge store-badge--google store-badge--footer js-android-download-modal"
             id="store-badge-footer-google"
             aria-label="Get it on Google Play — Android download info"
