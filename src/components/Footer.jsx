@@ -23,6 +23,7 @@ export default function Footer() {
               <span className="store-badge__store">App Store</span>
             </span>
           </a>
+          {/* hhhhh */}
           <a
             href={GOOGLE_PLAY}
             className="store-badge store-badge--google store-badge--footer js-android-download-modal"
